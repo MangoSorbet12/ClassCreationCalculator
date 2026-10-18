@@ -10,6 +10,11 @@ public class CalculatorDriver
         Scanner input= new Scanner(System.in);
         Calculator calculator= new Calculator();
 
+        System.out.println("Welcome! This program can 4 types of math problems: addition, subtraction, multiplication, and division.");
+        System.out.println("To choose what type of problem you'd like to solve, please input the ");
+        System.out.println("data type (\"integer\" or \"double\"), math operator (+,-,*,/), and two numbers.");
+        System.out.println("Please also format it so that there's a space between each number/word/symbol.");
+
         
         String stringInput= input.nextLine();
         //stores the indexes of the spaces in the user's input
@@ -17,7 +22,7 @@ public class CalculatorDriver
         
         //stores the type of data type the user selects
         String dataType= stringInput.substring(0,space1);
-        String operator= stringInput.substring(space1, space1+2);
+        String operator= stringInput.substring(space1+1, space1+2);
 
 
         // Code block that handles doubles
@@ -36,11 +41,16 @@ public class CalculatorDriver
         result = calculator . multiply ( value1 , value2 ) ;
         else if ( operator . equals ("/") )
          result = calculator . divide ( value1 , value2 ) ;
-         else {
-        System . err . println (" Invalid operator .") ;
-        return ;
-         }
+        else 
+        {
+            System.err.println(" Invalid operator .");
+            input.close();
+            return;
+            
+        }
          // Add your result printing statement here
+         System.out.println(value1+operator+value2+"="+result);
+         
         }
 
         // Code block that deals with integers
@@ -63,7 +73,8 @@ public class CalculatorDriver
         else 
         {
             System.err.println ("Invalid operator.");
-            return result;
+            input.close();
+            return;
         }
         // Add your result printing statement here
         System.out.println(value1+operator+value2+"="+result);
@@ -73,7 +84,7 @@ public class CalculatorDriver
         // Code block to deal with a non - valid data type input
         else 
         {
-        System . err . println (" Data type incompatible - exiting program .") ;
+        System.err.println ("Data type incompatible - exiting program.");
         }
 
         input.close();
