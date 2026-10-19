@@ -9,7 +9,8 @@ public class CalculatorDriver
     {
         Scanner input= new Scanner(System.in);
         Calculator calculator= new Calculator();
-
+        
+        //welcome message + instructions
         System.out.println("Welcome! This program can 4 types of math problems: addition, subtraction, multiplication, and division.");
         System.out.println("To choose what type of problem you'd like to solve, please input the ");
         System.out.println("data type (\"integer\" or \"double\"), math operator (+,-,*,/), and two numbers.");
@@ -17,7 +18,7 @@ public class CalculatorDriver
 
         
         String stringInput= input.nextLine();
-        //stores the indexes of the spaces in the user's input
+        //stores the indexes of the first in the user's input (space between data type and operator)
         int space1= stringInput.indexOf(" ");
         
         //stores the type of data type the user selects
@@ -36,8 +37,9 @@ public class CalculatorDriver
         input.close();
 
         double result;
-
-         if (operator.equals("+"))
+        
+        //NOTE: I changed the names of these methods to my method names (ex: subtraction--> subtract)
+        if (operator.equals("+"))
         result = calculator.addition( value1 , value2 );
         else if (operator.equals ("-"))
         result = calculator.subtract( value1 , value2 );
@@ -51,7 +53,7 @@ public class CalculatorDriver
             return;
             
         }
-         // Add your result printing statement here
+         //result print statement here
          System.out.println(value1+operator+value2+"="+result);
          
         }
@@ -62,7 +64,8 @@ public class CalculatorDriver
 
         int value1 = input.nextInt();
         int value2 = input.nextInt();
-        int result;
+        //int-> double data type because of generics
+        double result;
 
         input.close();
         
@@ -81,7 +84,7 @@ public class CalculatorDriver
         
             return;
         }
-        // Add your result printing statement here
+        // result print statement
             System.out.println(value1+operator+value2+"="+result);
         }
         // Code block to deal with a non - valid data type input

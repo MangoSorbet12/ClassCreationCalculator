@@ -2,22 +2,24 @@ package ClassCreationCalculator;
 
 public class Calculator 
 {
-    public  <T> T addition(T a, T b)
+    //generics methods (accepts int and double input values)
+    //prints out answer as a double
+    public <T extends Number> double addition(T a, T b)
     {
        return a.doubleValue()+b.doubleValue();
     }
 
-    public static <T> T subtract(T a,T b)
+    public <T extends Number> double subtract(T a,T b)
     {
         return a.doubleValue()-b.doubleValue();
     }
 
-    public static <T> T multiply(T a, T b)
+    public <T extends Number> double multiply(T a, T b)
     {
         return a.doubleValue()*b.doubleValue();
     }
 
-    public static <T> T divide(T a, T b)
+    public <T extends Number> double divide(T a, T b)
     {
         return a.doubleValue()/b.doubleValue();
     }
