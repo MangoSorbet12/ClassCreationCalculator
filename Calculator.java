@@ -2,26 +2,26 @@ package ClassCreationCalculator;
 
 public class Calculator 
 {
-    public int addition(int a, int b)
+    public  <T> T addition(T a, T b)
     {
-        return a+b;
+       return a.doubleValue()+b.doubleValue();
     }
 
-    public int subtract(int a,int b)
+    public static <T> T subtract(T a,T b)
     {
-        return a-b;
+        return a.doubleValue()-b.doubleValue();
     }
 
-    public int multiply(int a, int b)
+    public static <T> T multiply(T a, T b)
     {
-        return a*b;
+        return a.doubleValue()*b.doubleValue();
     }
 
-    public int divide(int a, int b)
+    public static <T> T divide(T a, T b)
     {
-        return a/b;
+        return a.doubleValue()/b.doubleValue();
     }
-
+/* 
     //these are the overloaded methods- uses double inputs and has a double return type
     public double addition(double c, double d)
     {
@@ -42,4 +42,5 @@ public class Calculator
     {
         return c/d;
     }
+ */
 }
